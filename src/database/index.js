@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const configOptions = {
   useNewUrlParser: true,
@@ -6,8 +9,7 @@ const configOptions = {
 };
 
 const connectToDB = async () => {
-  const connectionUrl =
-    "your-mongodb-url";
+  const connectionUrl = process.env.MONGODB_URL;
 
   mongoose
     .connect(connectionUrl, configOptions)
