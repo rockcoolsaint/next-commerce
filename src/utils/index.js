@@ -1,3 +1,7 @@
+import * as dotenv from 'dotenv';
+
+dotenv.config();
+
 export const navOptions = [
   {
     id: "home",
@@ -189,17 +193,17 @@ export const AvailableSizes = [
 ];
 
 export const firebaseConfig = {
-  apiKey: "API_KEY",
-  authDomain: "AUTH_DOMAIN",
-  projectId: "PROJECT_ID",
-  storageBucket: "STROAGE_BUCKET",
-  messagingSenderId: "MESSAGING_SENDER_ID",
-  appId: "APP_ID",
-  measurementId: "MEASUREMENT_ID",
+  apiKey: NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 export const firebaseStroageURL =
-  "YOUR_FIREBASE_STROAGE_URL";
+  process.env.NEXT_PUBLIC_FIREBASE_STORAGE_URL;
 
 export const addNewAddressFormControls = [
   {

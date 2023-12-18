@@ -10,6 +10,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { PulseLoader } from "react-spinners";
 import { toast } from "react-toastify";
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 export default function Checkout() {
   const {
@@ -29,7 +32,7 @@ export default function Checkout() {
   const params = useSearchParams();
 
   const publishableKey =
-    "pk_test_51NMv6ZSC6E6fnyMeRIEb9oEXdGRCC9yrBTT4xWHgcjWOuFcqFiAHErvaS50K1hl5t5WJXVGfLLWxvb705IWJhA3300yCcrMnlM";
+    process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY;
   const stripePromise = loadStripe(publishableKey);
 
   console.log(cartItems);
